@@ -1,0 +1,225 @@
+<!-- app.component.html -->
+<div class="container">
+  <div class="rowc">
+    Registration Form
+  </div>
+  <br/>
+  <br/>
+  <div class="form-group">
+    <form (ngSubmit)="onSubmit(form)" #form="ngForm">
+
+      <div class="icon-row">
+        <!--
+        for firstname validation 
+      -->
+        <div class="name">
+          <div>
+            <label for="firstName">Student FirstName </label>
+          <input type="text" class="form-contorl"  id="firstName" placeholder="Student_name" [(ngModel)]="formData.firstName" name="firstName" required pattern="[a-zA-Z\s]+">
+    
+          <div *ngIf="form.controls['firstName'].hasError('required') && form.controls['firstName'].touched" class="error-message">
+            First Name is required.
+          </div>
+          <div *ngIf="form.controls['firstName'].hasError('pattern') && form.controls['firstName'].touched" class="error-message">
+            Only characters and spaces are allowed.
+          </div>
+
+          </div>
+          <!--
+            for lastname validation 
+          -->
+          <div>
+            <label for="LastName">Student LastName </label>
+            <input type="text" class="form-contorl" id="lastName" placeholder="Student_name" [(ngModel)]="formData.lastName" name="lastName" required pattern="[a-zA-Z\s]+">
+          <div *ngIf="form.controls['lastName'].hasError('required') && form.controls['lastName'].touched" class="error-message">
+            Last Name is required.
+          </div>
+          <div *ngIf="form.controls['lastName'].hasError('pattern') && form.controls['lastName'].touched" class="error-message">
+            Only characters and spaces are allowed.
+          </div>
+
+          </div>
+          
+
+        </div>
+      </div>
+      <br/>
+    
+      <!--
+        for email validation 
+      -->
+      
+      <div class="icon-row">
+          <div class="icon"><svg  xmlns="http://www.w3.org/2000/svg" height="35" width="50" viewBox="0 0 512 512"><path d="M64 112c-8.8 0-16 7.2-16 16v22.1L220.5 291.7c20.7 17 50.4 17 71.1 0L464 150.1V128c0-8.8-7.2-16-16-16H64zM48 212.2V384c0 8.8 7.2 16 16 16H448c8.8 0 16-7.2 16-16V212.2L322 328.8c-38.4 31.5-93.7 31.5-132 0L48 212.2zM0 128C0 92.7 28.7 64 64 64H448c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128z"/></svg> </div>
+
+          <div>
+            <label for="email" > Student Email </label>
+        
+            <input type="text" class="form-contorlinput-container"  pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" minlength="12" maxlength="18" id="email" placeholder="Student_name" [(ngModel)]="formData.email" name="email" required>
+            <div *ngIf="form.controls['email'].hasError('required') && form.controls['email'].touched" class="error-message">
+              Email is required.
+            </div>
+            <div *ngIf="form.controls['email'].hasError('pattern') && form.controls['email'].touched" class="error-message">
+              *Invalid email format.
+            </div>
+            <div *ngIf="form.controls['email'].hasError('minlength') && form.controls['email'].touched" class="error-message">
+              *Email must have exactly 12 characters.
+            </div>
+            <div *ngIf="form.controls['email'].hasError('maxlength') && form.controls['email'].touched" class="error-message">
+              *Email should not exceed 18 characters.
+            </div>
+
+          </div>
+  
+      </div>
+      <br/>
+      <!--
+        for username 
+      -->
+      <div class="icon-row">
+        <div class="icon">
+          <svg xmlns="http://www.w3.org/2000/svg" height="35" width="50" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M304 128a80 80 0 1 0 -160 0 80 80 0 1 0 160 0zM96 128a128 128 0 1 1 256 0A128 128 0 1 1 96 128zM49.3 464H398.7c-8.9-63.3-63.3-112-129-112H178.3c-65.7 0-120.1 48.7-129 112zM0 482.3C0 383.8 79.8 304 178.3 304h91.4C368.2 304 448 383.8 448 482.3c0 16.4-13.3 29.7-29.7 29.7H29.7C13.3 512 0 498.7 0 482.3z"/></svg>
+        </div>
+        <div>
+          <label for="username">UserName </label>
+          <input type="text" id="user" placeholder="User-Name" [(ngModel)]="formData.userName" name="userName" required>
+        </div>
+      </div>
+
+      <br/>
+      
+       <!--
+        for branch
+      -->
+
+      <div class="icon-row">
+        <div class="icon">
+          <svg xmlns="http://www.w3.org/2000/svg" height="35" width="50" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M80 104a24 24 0 1 0 0-48 24 24 0 1 0 0 48zm80-24c0 32.8-19.7 61-48 73.3v87.8c18.8-10.9 40.7-17.1 64-17.1h96c35.3 0 64-28.7 64-64v-6.7C307.7 141 288 112.8 288 80c0-44.2 35.8-80 80-80s80 35.8 80 80c0 32.8-19.7 61-48 73.3V160c0 70.7-57.3 128-128 128H176c-35.3 0-64 28.7-64 64v6.7c28.3 12.3 48 40.5 48 73.3c0 44.2-35.8 80-80 80s-80-35.8-80-80c0-32.8 19.7-61 48-73.3V352 153.3C19.7 141 0 112.8 0 80C0 35.8 35.8 0 80 0s80 35.8 80 80zm232 0a24 24 0 1 0 -48 0 24 24 0 1 0 48 0zM80 456a24 24 0 1 0 0-48 24 24 0 1 0 0 48z"/></svg>
+        </div>
+        <div>
+          <label for="Branch">Branch </label>
+          <select id="branch" [(ngModel)]="formData.branch" name="branch" required title="select">
+            <option value="" disabled selected>Select Branch</option>
+            <option value="BE">B.E</option>
+            <option value="BCom">B.Com</option>
+            <option value="MCA">MCA</option>
+            <option value="BTech">B.Tech</option>
+          </select>
+
+        </div>
+      </div>
+      <br/>
+      
+       <!--
+        for phone validation 
+      -->
+
+      <div class="icon-row">
+        <div class="icon">
+          <svg xmlns="http://www.w3.org/2000/svg" height="35" width="50" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"/></svg>
+        </div>
+        <div>
+          <label for="phone">Phone Number </label>
+          <input type="text" class="form-contorl" id="phone" placeholder="Contact" [(ngModel)]="formData.phoneNumber" name="phoneNumber" required pattern="[6-9]{1}[0-9]{9}">
+          <div *ngIf="form.controls['phoneNumber'].hasError('required') && form.controls['phoneNumber'].touched" class="error-message">
+            Phone Number is required.
+          </div>
+          <div *ngIf="form.controls['phoneNumber'].hasError('pattern') && form.controls['phoneNumber'].touched" class="error-message">
+            Phone Number must be 10 digits without symbols.
+          </div>
+
+        </div>
+      </div>
+
+      <br/>
+     <!--
+        for password validation 
+      -->
+      <div class="icon-row">
+        <div class="icon">
+          <svg xmlns="http://www.w3.org/2000/svg" height="35" width="50" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M144 144v48H304V144c0-44.2-35.8-80-80-80s-80 35.8-80 80zM80 192V144C80 64.5 144.5 0 224 0s144 64.5 144 144v48h16c35.3 0 64 28.7 64 64V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V256c0-35.3 28.7-64 64-64H80z"/></svg>
+        </div>
+        <div>
+          
+          <label for="phone">Password </label>
+          <input type="password" class="form-contorl" id="pass" placeholder="Password" [(ngModel)]="formData.password" name="password" required >
+          <div *ngIf="form.controls['password'].hasError('required') && form.controls['password'].touched">
+            Password is required.
+          </div>
+
+        </div>
+      </div>
+      <br/>
+      <div class="icon-row">
+        <div class="icon">
+          <svg xmlns="http://www.w3.org/2000/svg" height="35" width="50" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M144 144v48H304V144c0-44.2-35.8-80-80-80s-80 35.8-80 80zM80 192V144C80 64.5 144.5 0 224 0s144 64.5 144 144v48h16c35.3 0 64 28.7 64 64V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V256c0-35.3 28.7-64 64-64H80z"/></svg>
+
+        </div>
+        <div>
+          <label for="phone">Confirm Password </label>
+          <input type="password" class="form-contorl" id="cpass" placeholder="retype Password" [(ngModel)]="formData.confirmPassword" name="confirmPassword" required>
+          <div *ngIf="form.controls['confirmPassword'].hasError('required') && form.controls['confirmPassword'].touched">
+            Confirm Password is required.
+          </div>
+
+          <div *ngIf="form.controls['password'].value !== form.controls['confirmPassword'].value && form.controls['confirmPassword'].touched"  class="error-message">
+            Passwords do not match.
+          </div>
+        </div>
+      </div>
+      
+      <br/>
+      <br/>    
+      <button type="submit" >{{ selectedIndex === -1 ? 'Register' : 'Update' }}</button>
+
+    </form>
+  </div>
+
+  <div class="list-group">
+    <div class="contain">
+      <div class="grid-container">
+        <div >
+          <table>
+            <tr>
+              <th>
+               S.no
+              </th>
+              <th>
+                Email
+              </th>
+              <th>
+                Name
+              </th>
+              <th>
+                Branch
+              </th>
+              <th>
+                Username
+              </th>
+              <th>
+                Phone No
+              </th>
+              <th>
+                Actions
+              </th>
+            </tr>
+            <tr *ngFor="let student of registrations; let i = index">
+              <td> {{ i + 1 }}</td>
+              <td>{{ student.email}}</td>
+              <td>{{ student.firstName }} {{ student.lastName }}</td>
+              <td> {{student.branch}} </td>
+              <td>{{student.userName}}</td>
+              <td>{{student.phoneNumber}}</td>
+              <td class="action">
+                <button type="button" id="action1" (click)="onEdit(i)">Edit</button>
+                <button type="button" id="action2"(click)="onDelete(i)">Delete</button>
+              </td>
+            </tr>
+
+          </table>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

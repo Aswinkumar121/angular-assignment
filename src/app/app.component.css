@@ -1,0 +1,202 @@
+/* Add this to your styles.css or component-specific style file */
+/* Add this to your styles.css or component-specific style file */
+
+.form-group {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 5px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 1px 1px 30px rgb(173, 211, 238);
+}
+.name{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+#firstName{
+  width: 180px;
+  margin-right: 18px;
+  
+}
+#lastName{
+  width: 180px;
+}
+
+.rowc{
+  text-align: center;
+  font-size: xx-large;
+  font-weight: 600;
+  color:#3a78b9;
+  background-color: #dddada;
+  padding:5px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.icon-row{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.input-container {
+  margin-bottom: 20px;
+}
+.icon-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.icon{
+  border: solid rgba(155, 153, 151, 0.658);
+  border-radius: 5px;
+  height: 38px;
+  padding: 4px;
+  margin: 0px;
+  
+}
+
+
+label {
+  flex-grow: 1; /* Allow label to take remaining space */
+}
+
+/* Additional styling for the input container, adjust as needed */
+.input-container {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Additional styling for the input, adjust as needed */
+input {
+  width:300px;
+  padding: 8px;
+  margin-top: 4px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+
+}
+
+select {
+  width: 300px;
+  padding: 8px;
+  margin-top: 4px;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+/* Style for the dropdown arrow */
+select::-ms-expand {
+  display: none;
+}
+
+select {
+  background-repeat: no-repeat;
+  background-position: right 8px top 50%;
+
+}
+
+/* Additional styling for the selected option */
+select option:checked {
+  background-color: #f01414; /* Highlight the selected option */
+}
+
+/* Additional styling for the border and focus state */
+select:focus {
+  border: 2px solid #3a78b9; /* Highlight the select box when focused */
+  outline: none; /* Remove the default focus outline */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add a subtle box shadow when focused */
+}
+
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #3f6841;
+  color: black;
+}
+
+.error-message {
+  color: #ff0000;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.action{
+  display: flex;
+  flex-direction: row;
+}
+
+#action1{
+  background-color: #3a78b9;
+  border: rgb(133, 133, 223) solid;
+
+}
+
+#action2{
+  background-color: #f01414;
+  border: rgb(252, 145, 131) solid;
+
+}
+
+/* Add this to your styles.css or component-specific style file */
+
+.list-group {
+  max-width: 1800px;
+  margin: 40px ;
+}
+
+.contain {
+  overflow: auto;
+  margin: 40px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  border:solid rgb(189, 187, 190);
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+th {
+  background-color: #9e9d9d;
+  text-align: center;
+ 
+}
+
+button {
+  padding: 8px 12px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+button:hover {
+  background-color: #45a049;
+}
